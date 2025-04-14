@@ -1,0 +1,1 @@
+[Szobor{anyag='márvány', szazad='20'}, Festmeny{stilus='impresszionista', technika='festék'}, Szobor{anyag='bronz', szazad='20'}, Festmeny{stilus='impresszionista', technika='ceruza'}, Festmeny{stilus='szürrealista', technika='festék'}]
