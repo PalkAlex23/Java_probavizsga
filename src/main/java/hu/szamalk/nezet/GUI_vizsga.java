@@ -9,6 +9,9 @@ public class GUI_vizsga extends JFrame {
     private JComboBox cbxMinden;
     private JButton btnOk;
     private JButton btnCancel;
+    private JList list1;
+    private JButton btnCopy;
+    private JButton btnFelvitel;
 
     private JMenuItem alkoto, szobor, festmeny;
 

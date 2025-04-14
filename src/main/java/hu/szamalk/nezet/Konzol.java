@@ -16,6 +16,9 @@ public class Konzol {
         Gyujtemeny gy = new Gyujtemeny();
         konzolraIr(gy.getMutargyak().toString());
         fajbaIr(gy.getMutargyak().toString());
+
+        /* serializálás */
+        gy.kiiras();
     }
 
     private void konzolraIr(String uzenet) {

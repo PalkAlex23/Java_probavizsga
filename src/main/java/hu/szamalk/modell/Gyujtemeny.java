@@ -1,10 +1,11 @@
 package hu.szamalk.modell;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class Gyujtemeny {
+public class Gyujtemeny implements Serializable {
     private List<Mukincs> mutargyak;
 
     public Gyujtemeny() {
@@ -35,5 +36,27 @@ public class Gyujtemeny {
         List<Szobor> szobrok = getSzobrok();
         Collections.sort(szobrok);
         return Collections.unmodifiableList(szobrok);
+    }
+
+    public void kiiras() {
+        ObjectOutputStream oos = null;
+        try {
+            oos = new ObjectOutputStream(new FileOutputStream("gyujtemenyek.txt"));
+            oos.writeObject(mutargyak);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+    }
+
+    public void beolvasas() {
+        ObjectInputStream ois = null;
+        try {
+            ois = new ObjectInputStream(new FileInputStream("gyujtemenyek.txt"));
+            Gyujtemeny gy = (Gyujtemeny) ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 }
